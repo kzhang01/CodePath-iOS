@@ -11,23 +11,14 @@ import AlamofireImage
 
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var movies = [[String : Any]]()
-    var users : [[String : Any]] = [["name" : "Tim",
-                                     "hometown" : "Dallas"],
-                                    ["name" : "Flo",
-                                     "hometown" : "San Jose"],
-                                    ["name" : "Hanjing",
-                                     "hometown" : "Beijing"],
-                                    ["name" : "Matthew",
-                                     "hometown" : "Raleigh"],
-                                    ["name" : "Karina",
-                                     "hometown" : "Princeton"]]
-    @IBOutlet weak var usersTableView: UITableView!
+
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         networkRequest()
-        usersTableView.delegate = self
-        usersTableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     func networkRequest() {
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
@@ -41,7 +32,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 self.movies = dataDictionary["results"] as! [[String:Any]]
-                self.usersTableView.reloadData()
+                self.tableView.reloadData()
               // TODO: Get the array of movies
               // TODO: Store the movies in a property to use elsewhere
               // TODO: Reload your table view data
@@ -70,14 +61,20 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//        print(segue.identifier!)
+        print("I'm about to change screens")
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let movie = movies[indexPath.row]
+        
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+        detailsViewController.movie = movie
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    */
 
 }
