@@ -1,14 +1,13 @@
 //
-//  MovieDetailsViewController.swift
+//  MovieGridDetailsViewController.swift
 //  Flix
 //
-//  Created by Karina Zhang on 9/26/20.
+//  Created by Karina Zhang on 10/2/20.
 //  Copyright © 2020 Codepath. All rights reserved.
 //
-
 import UIKit
 import AlamofireImage
-class MovieDetailsViewController: UIViewController {
+class MovieGridDetailsViewController: UIViewController {
     var movie: [String:Any]!
     @IBOutlet weak var backdropView: UIImageView!
     @IBOutlet weak var posterView: UIImageView!
@@ -36,7 +35,6 @@ class MovieDetailsViewController: UIViewController {
         view.bringSubviewToFront(titleLabel)
     }
     
-
     /*
     // MARK: - Navigation
 
