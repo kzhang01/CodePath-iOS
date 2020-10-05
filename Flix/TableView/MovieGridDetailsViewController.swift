@@ -39,10 +39,9 @@ class MovieGridDetailsViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("opening trailer")
         let trailerViewController = segue.destination as! TrailerViewController
         trailerViewController.movieID = movie["id"] as! Int
-      
+    
     }
 
 }

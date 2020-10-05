@@ -63,11 +63,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        print(segue.identifier!)
-        print("I'm about to change screens")
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)!
         let movie = movies[indexPath.row]

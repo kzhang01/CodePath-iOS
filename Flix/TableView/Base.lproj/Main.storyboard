@@ -99,9 +99,13 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="igi-N0-Hfv">
                                 <rect key="frame" x="0.0" y="88" width="414" height="250"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="Q8F-KB-qiY"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1xO-vZ-di9" appends="YES" id="uSE-Di-8qK"/>
+                                </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hGn-UQ-YiA">
                                 <rect key="frame" x="20" y="278" width="90" height="120"/>
@@ -140,6 +144,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXx-JB-lgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1xO-vZ-di9">
+                    <connections>
+                        <segue destination="abB-QH-kVg" kind="presentation" id="kDL-8D-AKh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="1524.7767857142856"/>
         </scene>
@@ -167,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOa-RJ-psf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1208.6956521739132" y="2230.5803571428569"/>
+            <point key="canvasLocation" x="642" y="2265"/>
         </scene>
         <!--Superhero-->
         <scene sceneID="eea-Fe-gxF">
@@ -354,6 +363,9 @@
             <point key="canvasLocation" x="1208.6956521739132" y="107.8125"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kDL-8D-AKh"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gradient" width="3593" height="1614"/>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
