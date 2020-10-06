@@ -18,25 +18,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgP-9V-3jy">
-                                <rect key="frame" x="93" y="313.5" width="189" height="40"/>
+                                <rect key="frame" x="37.5" y="403.5" width="300" height="60"/>
                                 <color key="backgroundColor" red="0.09722484579" green="0.62174552549999995" blue="0.93519508839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="PxF-7C-Uda"/>
+                                    <constraint firstAttribute="height" constant="60" id="PxF-7C-Uda"/>
+                                    <constraint firstAttribute="width" constant="300" id="gPj-p7-ALO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Login with Twitter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onLoginButton:" destination="oCW-hA-74c" eventType="touchUpInside" id="iNu-7C-Enp"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TwitterLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="8VO-W1-nvj">
+                                <rect key="frame" x="112.5" y="158.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="JB2-Jg-VWm"/>
+                                    <constraint firstAttribute="width" constant="150" id="gmU-GZ-Gt4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fjy-KC-Pu2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dgP-9V-3jy" firstAttribute="centerY" secondItem="A8h-FE-D0L" secondAttribute="centerY" id="IRu-tW-fHl"/>
+                            <constraint firstItem="8VO-W1-nvj" firstAttribute="centerY" secondItem="A8h-FE-D0L" secondAttribute="centerY" constant="-100" id="DPM-Kb-gAU"/>
+                            <constraint firstItem="dgP-9V-3jy" firstAttribute="centerY" secondItem="A8h-FE-D0L" secondAttribute="centerY" constant="100" id="IRu-tW-fHl"/>
                             <constraint firstItem="dgP-9V-3jy" firstAttribute="centerX" secondItem="A8h-FE-D0L" secondAttribute="centerX" id="UxM-KQ-gP3"/>
+                            <constraint firstItem="8VO-W1-nvj" firstAttribute="centerX" secondItem="A8h-FE-D0L" secondAttribute="centerX" id="lL3-Wk-TAk"/>
                         </constraints>
                     </view>
                     <connections>
@@ -52,7 +67,7 @@
             <objects>
                 <tableViewController id="KmS-Ab-P9n" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GK6-dD-zkb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -123,10 +138,10 @@
         <!--Navigation Controller-->
         <scene sceneID="7Gr-VJ-v8d">
             <objects>
-                <navigationController id="PeZ-6y-y8r" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="PeZ-6y-y8r" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="hIM-Il-awC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7ns-5g-HqT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.09722484579" green="0.62174552549999995" blue="0.93519508839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -143,6 +158,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="TwitterLogoBlue" width="200" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
