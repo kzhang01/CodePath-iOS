@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Walkthrough](https://github.com/kzhang01/Tip.me/blob/master/tip/tipGif.gif)
+![Walkthrough](https://github.com/kzhang01/CodePath-iOS/blob/master/tip/tip/tipGif.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
