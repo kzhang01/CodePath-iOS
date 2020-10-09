@@ -15,6 +15,10 @@ class HomeTableViewController: UITableViewController {
     
     let myRefreshControl = UIRefreshControl()
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadTweets()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTweets()
