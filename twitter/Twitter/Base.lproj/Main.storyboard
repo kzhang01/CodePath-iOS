@@ -97,21 +97,50 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeQ-k0-zLP">
+                                            <rect key="frame" x="325" y="83" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="HkU-2m-LhB"/>
+                                                <constraint firstAttribute="height" constant="30" id="fez-cT-56P"/>
+                                            </constraints>
+                                            <state key="normal" image="favor-icon"/>
+                                            <connections>
+                                                <action selector="likeTweet:" destination="OEe-Dd-BS0" eventType="touchUpInside" id="B35-2L-XjV"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqb-SL-Uzl">
+                                            <rect key="frame" x="287" y="83" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="0jy-GV-b5m"/>
+                                                <constraint firstAttribute="height" constant="30" id="IIP-Xl-MP3"/>
+                                            </constraints>
+                                            <state key="normal" image="retweet-icon"/>
+                                            <connections>
+                                                <action selector="retweet:" destination="OEe-Dd-BS0" eventType="touchUpInside" id="gqk-V9-VnQ"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mdu-ZS-gYS" secondAttribute="bottom" constant="8" id="5D8-cd-cnM"/>
                                         <constraint firstItem="mIM-Rn-WX8" firstAttribute="top" secondItem="WjW-jj-Zgx" secondAttribute="bottom" constant="4" id="5RL-0R-U5q"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mIM-Rn-WX8" secondAttribute="bottom" constant="4" id="5py-0V-DeS"/>
                                         <constraint firstItem="WjW-jj-Zgx" firstAttribute="top" secondItem="Div-Fs-SHw" secondAttribute="topMargin" id="7gh-FW-P7w"/>
+                                        <constraint firstItem="eeQ-k0-zLP" firstAttribute="bottom" secondItem="Div-Fs-SHw" secondAttribute="bottomMargin" constant="4" id="KCd-Wd-lcR"/>
                                         <constraint firstItem="mIM-Rn-WX8" firstAttribute="trailing" secondItem="Div-Fs-SHw" secondAttribute="trailingMargin" constant="8" id="aef-GI-ltn"/>
+                                        <constraint firstItem="eeQ-k0-zLP" firstAttribute="centerY" secondItem="zqb-SL-Uzl" secondAttribute="centerY" id="cTp-fv-URe"/>
+                                        <constraint firstItem="eeQ-k0-zLP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mIM-Rn-WX8" secondAttribute="bottom" constant="4" id="dq8-KO-EXv"/>
                                         <constraint firstItem="mdu-ZS-gYS" firstAttribute="leading" secondItem="Div-Fs-SHw" secondAttribute="leading" constant="8" id="jQ6-rK-ASB"/>
                                         <constraint firstItem="mIM-Rn-WX8" firstAttribute="leading" secondItem="mdu-ZS-gYS" secondAttribute="trailing" constant="8" id="jtL-VG-5Zn"/>
                                         <constraint firstItem="WjW-jj-Zgx" firstAttribute="leading" secondItem="mdu-ZS-gYS" secondAttribute="trailing" constant="8" id="lai-0k-UwO"/>
+                                        <constraint firstItem="eeQ-k0-zLP" firstAttribute="leading" secondItem="zqb-SL-Uzl" secondAttribute="trailing" constant="8" id="o9h-HZ-jEs"/>
                                         <constraint firstItem="mdu-ZS-gYS" firstAttribute="top" secondItem="Div-Fs-SHw" secondAttribute="top" constant="8" id="sA4-F3-Ip0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="eeQ-k0-zLP" secondAttribute="trailing" constant="4" id="yes-TB-dy1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="likeButton" destination="eeQ-k0-zLP" id="ByD-b9-CoU"/>
                                     <outlet property="profileImageView" destination="mdu-ZS-gYS" id="kYC-wM-S42"/>
+                                    <outlet property="retweetButton" destination="zqb-SL-Uzl" id="k7R-qv-EeM"/>
                                     <outlet property="tweetContentLabel" destination="mIM-Rn-WX8" id="Qqj-9J-Ob5"/>
                                     <outlet property="userNameLabel" destination="WjW-jj-Zgx" id="z07-yE-8u3"/>
                                 </connections>
@@ -231,6 +260,8 @@
     </scenes>
     <resources>
         <image name="TwitterLogoBlue" width="200" height="200"/>
+        <image name="favor-icon" width="30" height="30"/>
+        <image name="retweet-icon" width="30" height="30"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
